@@ -35,9 +35,18 @@ public class DetectPlayerNode : BTNode
 
     public override NodeResult Tick()
     {
-        // TODO: implementar según las instrucciones del encabezado
+        if (_bb.playerTransform == null)
+            return NodeResult.Failure;
 
-        return NodeResult.Failure; // placeholder
+        float distance = Vector3.Distance(_enemy.position, _bb.playerTransform.position);
+        if (distance <= _radius)
+        {
+            _bb.playerDetected = true;
+            return NodeResult.Success;
+        }
+
+        _bb.playerDetected = false;
+        return NodeResult.Failure;
     }
 }
 
@@ -70,8 +79,11 @@ public class ChasePlayerNode : BTNode
 
     public override NodeResult Tick()
     {
-        // TODO: implementar según las instrucciones del encabezado
-        return NodeResult.Failure; // placeholder
+        if (!_bb.playerDetected)
+            return NodeResult.Failure;
+
+        _agent.SetDestination(_bb.playerTransform.position);
+        return NodeResult.Running;
     }
 }
 

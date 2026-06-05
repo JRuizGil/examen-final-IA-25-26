@@ -3399,7 +3399,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: ac947dd3535a69c4d8108e9f23350a77, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &1336460695
 Transform:
@@ -3763,7 +3763,7 @@ GameObject:
   - component: {fileID: 1496470676}
   m_Layer: 0
   m_Name: Goal
-  m_TagString: Untagged
+  m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
